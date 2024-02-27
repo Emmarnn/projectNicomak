@@ -1,3 +1,54 @@
 body {
     background-color: skyblue;
+    font-size: 20px;
+}
+
+* {
+    font-family: "Helvetica";
+}
+
+.logo-nicomak{
+    width: 100px;
+    top: 0;
+    right: 0;
+}
+
+nav{
+    position: absolute;
+    top: 0;
+    right: 30px;
+}
+
+li{
+    display: inline;
+    list-style: none;
+    font-style: none;
+}
+
+a{
+    text-decoration: underline;
+    transition: color 0.25s ease;
+    padding: 5px;
+    color: black;
+}
+
+a:hover{
+    color: #f07b2e !important;
+}
+
+a:active{
+    color: #a95924 !important;
+}
+
+a:visited{
+    color:inherit;
+}
+
+table{
+    border: 1px solid black;
+}
+
+th, td{
+    border: 1px solid black;
+    padding: 10px;
 }

@@ -1,0 +1,51 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Remerciement{% endblock %}
+
+{% block body %}
+<img src="{{ asset('img/nicomak-logo.png') }}" class="logo-nicomak" alt="Logo Nicomak">
+
+<nav>
+    <ul>
+        <li> <a href="{{ path ('app_home') }}">Accueil</a></li>
+        <li> <a href="{{ path ('app_remerciements_index') }}">Liste des remerciements</a></li>
+        <li> <a href="{{ path ('app_remerciements_new') }}">Nouveau remerciement</a></li>
+        <li>Connexion</li>
+    </ul>
+</nav>
+<br>
+    <h1>Détail du remerciement</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id :</th>
+                <td>{{ remerciement.id }}</td>
+            </tr>
+            <tr>
+                <th>De :</th>
+                <td>{{ remerciement.duSalarie }}</td>
+            </tr>
+            <tr>
+                <th>Pour :</th>
+                <td>{{ remerciement.pourSalarie }}</td>
+            </tr>
+            <tr>
+                <th>Pourquoi :</th>
+                <td>{{ remerciement.pourquoi }}</td>
+            </tr>
+            <tr>
+                <th>Date :</th>
+                <td>{{ remerciement.date ? remerciement.date|date('H:i:s | d-m-y') : '' }}</td>
+            </tr>
+        </tbody>
+    </table>
+    <br>
+    {{ include('remerciements/_delete_form.html.twig') }}
+    <br>
+
+    <a href="{{ path('app_remerciements_index') }}">Retour à la liste</a>
+
+    <a href="{{ path('app_remerciements_edit', {'id': remerciement.id}) }}">Modifier</a>
+
+{% endblock %}

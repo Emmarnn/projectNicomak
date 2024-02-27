@@ -1,0 +1,25 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Accueil{% endblock %}
+
+{% block body %}
+<header>
+<img src="{{ asset('img/nicomak-logo.png') }}" class="logo-nicomak" alt="Logo Nicomak">
+
+<nav>
+    <ul>
+        <li> <a href="{{ path ('app_remerciements_index') }}">Liste des remerciements</a></li>
+        <li> <a href="{{ path ('app_remerciements_new') }}">Nouveau remerciement</a></li>
+        <li>Connexion</li>
+    </ul>
+</nav>
+<br>
+
+</header>
+
+    <h1>Page d'accueil</h1>
+    <h2>Bienvenue dans la webapp de remerciements de Nicomak !</h2>
+
+
+
+{% endblock %}

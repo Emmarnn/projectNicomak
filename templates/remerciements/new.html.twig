@@ -1,0 +1,22 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Création d'un remerciement{% endblock %}
+
+{% block body %}
+<img src="{{ asset('img/nicomak-logo.png') }}" class="logo-nicomak" alt="Logo Nicomak">
+
+<nav>
+    <ul>
+        <li> <a href="{{ path ('app_home') }}">Accueil</a></li>
+        <li> <a href="{{ path ('app_remerciements_index') }}"> Liste remerciements </a></li>
+        <li>Connexion</li>
+    </ul>
+</nav>
+<br>
+
+    <h1>Création d'un nouveau remerciement</h1>
+
+    {{ include('remerciements/_form.html.twig') }}
+
+    <a href="{{ path('app_remerciements_index') }}">Retour à la liste</a>
+{% endblock %}

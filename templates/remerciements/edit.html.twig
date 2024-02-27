@@ -1,0 +1,26 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Modification d'un remerciement{% endblock %}
+
+{% block body %}
+<img src="{{ asset('img/nicomak-logo.png') }}" class="logo-nicomak" alt="Logo Nicomak">
+<nav>
+    <ul>
+        <li> <a href="{{ path ('app_home') }}">Accueil</a></li>
+        <li> <a href="{{ path ('app_remerciements_index') }}">Liste des remerciements</a></li>
+        <li> <a href="{{ path ('app_remerciements_new') }}">Nouveau remerciement</a></li>
+        <li>Connexion</li>
+    </ul>
+</nav>
+<br>
+
+    <h1>Modifier un remerciement</h1>
+
+    {{ include('remerciements/_form.html.twig', {'button_label': 'Mettre à jour'}) }}
+
+    {{ include('remerciements/_delete_form.html.twig') }}
+    <br>
+
+    <a href="{{ path('app_remerciements_index') }}">Retour à la liste</a>
+
+{% endblock %}

@@ -1,0 +1,51 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Liste des remerciements{% endblock %}
+
+{% block body %}
+<img src="{{ asset('img/nicomak-logo.png') }}" class="logo-nicomak" alt="Logo Nicomak">
+
+<nav>
+    <ul>
+        <li> <a href="{{ path ('app_home') }}">Accueil</a></li>
+        <li> <a href="{{ path ('app_remerciements_new') }}">Nouveau remerciement</a></li>
+        <li>Connexion</li>
+    </ul>
+</nav>
+<br>
+
+    <h1>Liste des remerciements</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id </th>
+                <th>De</th>
+                <th>Pour</th>
+                <th>Pourquoi</th>
+                <th>Date</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for remerciement in remerciements %}
+            <tr>
+                <td>{{ remerciement.id }}</td>
+                <td>{{ remerciement.duSalarie }}</td>
+                <td>{{ remerciement.pourSalarie }}</td>
+                <td>{{ remerciement.pourquoi }}</td>
+                <td>{{ remerciement.date ? remerciement.date|date('H:i:s | d-m-y') : '' }}</td>
+                <td>
+                    <a href="{{ path('app_remerciements_show', {'id': remerciement.id}) }}">Voir</a>|
+                    <a href="{{ path('app_remerciements_edit', {'id': remerciement.id}) }}">Modifier</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="6">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+<br>
+{% endblock %}
